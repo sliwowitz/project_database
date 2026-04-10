@@ -1,0 +1,47 @@
+---
+name: Automatic Differentiation for CMS Combine and RooFit
+postdate: 2026-04-09
+categories:
+  - Analysis tools
+durations:
+  - 3 months
+  - 6 months
+experiments:
+  - CMS
+skillset:
+  - C++
+  - Python
+  - Statistical Analysis
+status:
+  - Complete
+project:
+  - Any
+location:
+  - Any
+commitment:
+  - Full time
+program:
+  - Any
+shortdescription: Extend codegen backend support in CMS Combine and RooFit
+description: |
+  Statistical inference in High Energy Physics relies on minimizing complex likelihood functions with thousands of parameters. In this regime, numerical gradient computation becomes the dominant cost of the minimization. Automatic differentiation (AD) addresses this problem by producing analytic gradients whose evaluation cost is essentially independent of the parameter count.
+
+  RooFit has recently introduced an AD engine based on Clad, an AD tool based on source-code transformation that is implemented as a Clag compiler plugin. The RooFit AD engine is realized by a code generation (codegen) pipeline, which translates RooFit models to simple C++ likelihood code that Clad can process. Benchmarks on ATLAS and CMS models have already shown substantial reductions in minimization time with the Minuit 2 minimizer when using these analytic gradients.
+
+  CMS Combine, the statistical inference tool used by the vast majority of CMS analyses, is actively integrating the RooFit AD codegen backend. However, Combine implements several custom classes that are not yet covered by the codegen pipeline. Full AD support in Combine requires extending the codegen backend to these classes, as well as to any RooFit primitives used in CMS workflows that are not yet supported.
+
+  This project aims to extend the Clad-based codegen pipeline to cover the CMS Combine custom classes and the remaining RooFit primitives needed for CMS analyses. The work will involve implementing codegen support for each class, validating the generated gradients, benchmarking the resulting speedups on realistic CMS models, and contributing the developments upstream.
+
+contacts:
+  - name: Massimiliano Galli
+    email: massimiliano.galli@cern.ch
+  - name: Jonas Rembser
+    email: jonas.rembser@cern.ch
+  - name: Aliya Nigamova
+    email: aliya.nigamova@cern.ch
+
+mentees: []
+# keep an empty list until the project has started or a student is identified
+# when that happens add a list with name: and link: attributes for each students
+#  - name: Students name
+#  - link: #url for project page
